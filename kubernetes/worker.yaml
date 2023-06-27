@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: worker
+  name: worker
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      serviceAccountName: accessos
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: worker
+          image: accessos/worker:79d9d3454
+          resources:
+            limits:
+              memory: 3000M
+              cpu: "3"
+            requests:
+              cpu: 1000m
+              memory: 3000M
+          imagePullPolicy: Always
+          env:
+            - name: NODE_OPTIONS
+              value: "--max-old-space-size=3000"
+            - name: DEBUG
+              value: "false"
+            - name: LOGGING_LEVEL
+              value: "info"
+            # Set environment variables in accessos-secrets.yaml
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: postgres-database
+            - name: POSTGRES_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: postgres-host
+            - name: POSTGRES_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: postgres-port
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: postgres-user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: postgres-password
+            - name: REDIS_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: redis-host
+            - name: REDIS_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: redis-username
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: redis-password
+            - name: REDIS_DB
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: redis-db
+            - name: REDIS_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: redis-port
+            - name: DOMAIN
+              valueFrom:
+                secretKeyRef:
+                  name: accessos-secrets
+                  key: domain
+            - name: DATABASE_URL
+              value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)"
