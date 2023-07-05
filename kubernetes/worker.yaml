@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: worker
-          image: accessos/worker:3932047a7
+          image: accessos/worker:8db8cddef
           resources:
             limits:
               memory: 3000M
