@@ -31,6 +31,8 @@ spec:
           ports:
             - containerPort: 3000
           env:
+            - name: DEPLOYMENT_VERSION
+              value: "06e3c21df"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=4096"
             - name: DEBUG

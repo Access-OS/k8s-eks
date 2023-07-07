@@ -29,6 +29,8 @@ spec:
               memory: 3000M
           imagePullPolicy: Always
           env:
+            - name: DEPLOYMENT_VERSION
+              value: "06e3c21df"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=3000"
             - name: DEBUG
