@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: accessos
-          image: accessos/access:976c8b54c
+          image: accessos/access:06e3c21df
           resources:
             limits:
               memory: 2048M
