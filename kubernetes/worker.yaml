@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: worker
-          image: accessos/worker:8cf029cac
+          image: accessos/worker:98bb1e338
           resources:
             limits:
               memory: 3000M
@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DEPLOYMENT_VERSION
-              value: "8cf029cac"
+              value: "98bb1e338"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=3000"
             - name: DEBUG
