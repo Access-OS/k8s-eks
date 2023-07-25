@@ -100,7 +100,7 @@ spec:
                   name: accessos-secrets
                   key: domain
             - name: DATABASE_URL
-              value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)"
+              value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)?statement_cache_size=0"
 ---
 apiVersion: v1
 kind: Service
