@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: admin
-          image: accessos/admin:06de834f0
+          image: accessos/admin:7a88b1be4
           resources:
             limits:
               memory: 4096M
@@ -32,7 +32,7 @@ spec:
             - containerPort: 3000
           env:
             - name: DEPLOYMENT_VERSION
-              value: "06de834f0"
+              value: "7a88b1be4"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=4096"
             - name: DEBUG
@@ -100,7 +100,7 @@ spec:
                   name: accessos-secrets
                   key: domain
             - name: DATABASE_URL
-              value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)"
+              value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)?statement_cache_size=0"
 ---
 apiVersion: v1
 kind: Service
