@@ -33,6 +33,8 @@ spec:
           env:
             - name: DEPLOYMENT_VERSION
               value: "969a81db8"
+            - name: NODE_ENV
+              value: "production"
             # Set environment variables in accessos-secrets.yaml
             - name: DEBUG
               value: "false"

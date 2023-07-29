@@ -31,6 +31,8 @@ spec:
           env:
             - name: DEPLOYMENT_VERSION
               value: "969a81db8"
+            - name: NODE_ENV
+              value: "production"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=3000"
             - name: DEBUG
