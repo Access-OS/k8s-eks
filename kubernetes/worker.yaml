@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: worker
-          image: accessos/worker:044ac45b1
+          image: accessos/worker:426233a96
           resources:
             limits:
               memory: 3000M
@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DEPLOYMENT_VERSION
-              value: "044ac45b1"
+              value: "426233a96"
             - name: NODE_ENV
               value: "production"
             - name: NODE_OPTIONS
@@ -97,3 +97,19 @@ spec:
                   key: domain
             - name: DATABASE_URL
               value: "postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@$(POSTGRES_HOST):$(POSTGRES_PORT)/$(POSTGRES_DB)?connection_limit=100&statement_cache_size=0"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: worker
+  name: worker
+spec:
+  type: ClusterIP 
+  ports:
+    - name: "8080"
+      port: 8080 
+      targetPort: 8080
+  selector:
+    app: worker
+
