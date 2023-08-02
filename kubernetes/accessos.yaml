@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: accessos
-          image: accessos/access:40c45cfb9
+          image: accessos/access:9df8e15dd
           resources:
             limits:
               memory: 2048M
@@ -32,7 +32,7 @@ spec:
             - containerPort: 3000
           env:
             - name: DEPLOYMENT_VERSION
-              value: "40c45cfb9"
+              value: "9df8e15dd"
             - name: NODE_ENV
               value: "production"
             # Set environment variables in accessos-secrets.yaml
