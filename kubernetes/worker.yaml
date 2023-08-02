@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: worker
-          image: accessos/worker:2ab0708df
+          image: accessos/worker:24597b06c
           resources:
             limits:
               memory: 3000M
@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DEPLOYMENT_VERSION
-              value: "2ab0708df"
+              value: "24597b06c"
             - name: NODE_ENV
               value: "production"
             - name: NODE_OPTIONS
@@ -105,11 +105,10 @@ metadata:
     app: worker
   name: worker
 spec:
-  type: ClusterIP 
+  type: ClusterIP
   ports:
     - name: "8080"
-      port: 8080 
+      port: 8080
       targetPort: 8080
   selector:
     app: worker
-

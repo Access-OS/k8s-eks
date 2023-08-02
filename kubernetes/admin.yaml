@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: admin
-          image: accessos/admin:2ab0708df
+          image: accessos/admin:24597b06c
           resources:
             limits:
               memory: 4096M
@@ -32,9 +32,9 @@ spec:
             - containerPort: 3000
           env:
             - name: DEPLOYMENT_VERSION
-              value: "2ab0708df"
+              value: "24597b06c"
             - name: NODE_ENV
-              value: "production"              
+              value: "production"
             - name: NODE_OPTIONS
               value: "--max-old-space-size=4096"
             - name: DEBUG
