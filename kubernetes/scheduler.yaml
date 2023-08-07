@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: scheduler 
-          image: accessos/scheduler:6e859c274
+          image: accessos/scheduler:61351c23b
           resources:
             limits:
               memory: 2048M
@@ -34,7 +34,7 @@ spec:
             - name: NODE_ENV
               value: "production"
             - name: DEPLOYMENT_VERSION
-              value: "6e859c274"
+              value: "61351c23b"
             - name: DEBUG
               value: "false"
             - name: LOGGING_LEVEL
