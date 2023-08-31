@@ -103,7 +103,7 @@ resource "aws_db_instance" "default" {
 
   # All available versions: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts
   engine         = "postgres"
-  engine_version = "14.6"
+  engine_version = "15.4"
   instance_class = "db.m6i.xlarge"
 
   allocated_storage     = 20
