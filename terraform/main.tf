@@ -109,6 +109,8 @@ resource "aws_db_instance" "default" {
   allocated_storage     = 20
   max_allocated_storage = 100
   storage_encrypted     = true
+  storage_type          = "gp3"
+  iops                  = 3000
 
   db_name  = "accessos"
   username = "postgres"
