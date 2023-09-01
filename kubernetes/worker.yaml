@@ -107,11 +107,10 @@ metadata:
     app: worker
   name: worker
 spec:
-  type: ClusterIP 
+  type: ClusterIP
   ports:
     - name: "8080"
-      port: 8080 
+      port: 8080
       targetPort: 8080
   selector:
     app: worker
-
