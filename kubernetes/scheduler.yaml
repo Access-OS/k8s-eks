@@ -18,8 +18,8 @@ spec:
       imagePullSecrets:
         - name: regcred
       containers:
-        - name: scheduler
-          image: accessos/scheduler:b4e8c1b0d
+        - name: scheduler 
+          image: accessos/scheduler:690d6cca3
           resources:
             limits:
               memory: 2048M
@@ -34,7 +34,9 @@ spec:
             - name: NODE_ENV
               value: "production"
             - name: DEPLOYMENT_VERSION
-              value: "b4e8c1b0d"
+              value: "690d6cca3"
+            - name: DISABLE_OKTA_SCRAPING
+              value: "true"
             - name: DEBUG
               value: "false"
             - name: LOGGING_LEVEL
