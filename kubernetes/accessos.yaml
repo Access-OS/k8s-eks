@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: accessos
-          image: accessos/access:ce20f7df4
+          image: accessos/access:c3c0a190b
           resources:
             limits:
               memory: 2048M
@@ -32,7 +32,7 @@ spec:
             - containerPort: 3000
           env:
             - name: DEPLOYMENT_VERSION
-              value: "ce20f7df4"
+              value: "c3c0a190b"
             - name: NODE_ENV
               value: "production"
             - name: DISABLE_OKTA_SCRAPING
