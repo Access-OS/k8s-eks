@@ -17,11 +17,18 @@
                 "iam:ListAttachedRolePolicies",
                 "iam:ListRolePolicies",
                 "iam:GetRole",
-                "iam:CreateRole",
-                "iam:AttachRolePolicy",
                 "iam:GetSAMLProvider"
             ],
             "Resource": "*"
+        },
+        {
+          "Sid": "IAMWrite",
+          "Effect": "Allow",
+          "Action": [
+            "iam:CreateRole",
+            "iam:AttachRolePolicy"
+          ],
+          "Resource": "*"
         },
         {
             "Sid": "IdentityCenterWrite",
