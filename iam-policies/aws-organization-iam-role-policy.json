@@ -13,7 +13,13 @@
                 "identitystore:Describe*",
                 "identitystore:Get*",
                 "identitystore:IsMemberInGroups",
-                "identitystore:List*"
+                "identitystore:List*",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListRolePolicies",
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:AttachRolePolicy",
+                "iam:GetSAMLProvider"
             ],
             "Resource": "*"
         },
