@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: scheduler
-          image: accessos/scheduler:f66c45cae
+          image: accessos/scheduler:caae2003a
           resources:
             limits:
               memory: 2048M
@@ -34,7 +34,7 @@ spec:
             - name: NODE_ENV
               value: "production"
             - name: DEPLOYMENT_VERSION
-              value: "f66c45cae"
+              value: "caae2003a"
             - name: DISABLE_OKTA_SCRAPING
               value: "true"
             - name: DEBUG
