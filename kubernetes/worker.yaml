@@ -19,7 +19,7 @@ spec:
         - name: regcred
       containers:
         - name: worker
-          image: accessos/worker:8d458afe2
+          image: accessos/worker:11a52af20
           resources:
             limits:
               memory: 3000M
@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DEPLOYMENT_VERSION
-              value: "8d458afe2"
+              value: "11a52af20"
             - name: NODE_ENV
               value: "production"
             - name: DISABLE_OKTA_SCRAPING
